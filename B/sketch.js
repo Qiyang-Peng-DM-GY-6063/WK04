@@ -13,7 +13,14 @@ function setup() {
   for (let y = 0; y < height; y += pitch) {
     // draw a row of squares
     for (let x = 0; x < width; x += pitch) {
-      rect(x, y, sqDim);
+      //draw concentric squares
+      for(let dd = 95; dd>0;dd-=10){
+        push();
+        translate(x,y);
+        rotate(100-dd);
+        rect(0, 0, dd);
+        pop();
+      }
     }
   }
 }
